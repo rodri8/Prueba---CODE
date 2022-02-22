@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Inicio', inicio_path %>
+<h1>Respuestas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pregunta1</th>
+      <th>Pregunta2</th>
+      <th>Pregunta3</th>
+      <th>Pregunta4</th>
+      <th>Pregunta5</th>
+      <th>Codigo</th>
+      <th>Nota</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @respuestas.each do |respuesta| %>
+      <tr>
+        <td><%= respuesta.nombre %></td>
+        <td><%= respuesta.pregunta1 %></td>
+        <td><%= respuesta.pregunta2 %></td>
+        <td><%= respuesta.pregunta3 %></td>
+        <td><%= respuesta.pregunta4 %></td>
+        <td><%= respuesta.pregunta5 %></td>
+        
+
+        <td><%= link_to respuesta.codigo, examen_codigo_path(respuesta.codigo) %></td>
+
+        <td><%= respuesta.nota %></td>
+        <td><%= respuesta.estado %></td>
+        <td><%#= link_to 'Show', respuesta %></td>
+        <td><%#= link_to 'Edit', edit_respuesta_path(respuesta) %></td>
+        <td><%#= link_to 'Destroy', respuesta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

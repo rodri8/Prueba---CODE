@@ -1,0 +1,101 @@
+<%# radio_button("pregunta1", "grupo", p1.texto ) %>
+<%= link_to 'Inicio', inicio_path %>
+<h1>Resultados de su evaluación</h1>
+  
+	<div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title">Nombre del alumno</h5>
+			<input type="text" name="[respuesta]nombre" value="<%= @respuesta.nombre %>" readonly>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+    <div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(1).nombre %></h5>
+				<% @pregunta1.each do |p1| %>
+				<p><%#= @respuesta.pregunta1 %><%#= p1.id %> <%= p1.texto %> <small><%#= p1.correcta %></small>
+					<% if @respuesta.pregunta1 == p1.id && p1.correcta == "Si" %>
+						<i class="fa fa-check"></i>
+					<% end %>
+					<% if @respuesta.pregunta1 == p1.id && p1.correcta == "No" %>
+						<i class="fa fa-times"></i>
+					<% end %>
+				<% end %>
+				</p>
+    	</div>
+  	</div>
+
+		<p>&nbsp;</p>
+
+    <div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(2).nombre %></h5>
+				<% @pregunta2.each do |p1| %>
+				<p><%#= @respuesta.pregunta2 %><%#= p1.id %> <%= p1.texto %> <small><%#= p1.correcta %></small>
+					<% if @respuesta.pregunta2 == p1.id && p1.correcta == "Si" %>
+						<i class="fa fa-check"></i>
+					<% end %>
+					<% if @respuesta.pregunta2 == p1.id && p1.correcta == "No" %>
+						<i class="fa fa-times"></i>
+					<% end %>
+				<% end %>
+				</p>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+    <div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(3).nombre %></h5>
+				<% @pregunta3.each do |p1| %>
+				<p><%#= @respuesta.pregunta3 %><%#= p1.id %> <%= p1.texto %> <small><%#= p1.correcta %></small>
+					<% if @respuesta.pregunta3 == p1.id && p1.correcta == "Si" %>
+						<i class="fa fa-check"></i>
+					<% end %>
+					<% if @respuesta.pregunta3 == p1.id && p1.correcta == "No" %>
+						<i class="fa fa-times"></i>
+					<% end %>
+				<% end %>
+				</p>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+    <div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(4).nombre %></h5>
+				<% @pregunta4.each do |p1| %>
+				<p><%#= @respuesta.pregunta4 %><%#= p1.id %> <%= p1.texto %> <small><%#= p1.correcta %></small>
+					<% if @respuesta.pregunta4 == p1.id && p1.correcta == "Si" %>
+						<i class="fa fa-check"></i>
+					<% end %>
+					<% if @respuesta.pregunta4 == p1.id && p1.correcta == "No" %>
+						<i class="fa fa-times"></i>
+					<% end %>
+				<% end %>
+				</p>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+    <div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(5).nombre %></h5>
+				<% @pregunta5.each do |p1| %>
+				<p><%#= @respuesta.pregunta5 %><%#= p1.id %> <%= p1.texto %> <small><%#= p1.correcta %></small>
+					<% if @respuesta.pregunta5 == p1.id && p1.correcta == "Si" %>
+						<i class="fa fa-check"></i>
+					<% end %>
+					<% if @respuesta.pregunta5 == p1.id && p1.correcta == "No" %>
+						<i class="fa fa-times"></i>
+					<% end %>
+				<% end %>
+				</p>
+    	</div>
+  	</div>
+  	<p>&nbsp;</p>

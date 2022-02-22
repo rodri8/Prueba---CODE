@@ -1,0 +1,1187 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "empresas"[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "empresas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre_comercial" varchar, "razon_social" varchar, "telefono" varchar, "correo" varchar, "nit" varchar, "direccion" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "imagenes"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "imagenes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "base64" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210910021842)[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210610005759),
+(20210610014310),
+(20210610035040);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-02-20 22:13:33.967608"], ["updated_at", "2022-02-20 22:13:33.967608"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7829630bc438fd134454fb022159afe5be0babc3"], ["created_at", "2022-02-20 22:13:33.973295"], ["updated_at", "2022-02-20 22:13:33.973295"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "empresas"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "empresas"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "empresas"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "empresas"[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "empresas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre_comercial" varchar, "razon_social" varchar, "telefono" varchar, "correo" varchar, "nit" varchar, "direccion" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "empresas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre_comercial" varchar, "razon_social" varchar, "telefono" varchar, "correo" varchar, "nit" varchar, "direccion" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "imagenes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "imagenes"[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "empresas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre_comercial" varchar, "razon_social" varchar, "telefono" varchar, "correo" varchar, "nit" varchar, "direccion" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "imagenes"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "empresas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre_comercial" varchar, "razon_social" varchar, "telefono" varchar, "correo" varchar, "nit" varchar, "direccion" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "imagenes"[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "imagenes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "base64" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "imagenes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "base64" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "imagenes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "base64" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "imagenes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "base64" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "roles"[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "roles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "estado" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210910021842)[0m
+  [1m[35m (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210910021842)[0m
+  [1m[35m (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210910021842)[0m
+  [1m[35m (5.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210910021842)[0m
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210610005759),
+(20210610014310),
+(20210610035040);
+
+[0m
+  [1m[35m (6.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210610005759),
+(20210610014310),
+(20210610035040);
+
+[0m
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210610005759),
+(20210610014310),
+(20210610035040);
+
+[0m
+  [1m[35m (6.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210610005759),
+(20210610014310),
+(20210610035040);
+
+[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-02-20 22:13:34.116191"], ["updated_at", "2022-02-20 22:13:34.116191"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-02-20 22:13:34.117573"], ["updated_at", "2022-02-20 22:13:34.117573"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-02-20 22:13:34.117445"], ["updated_at", "2022-02-20 22:13:34.117445"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-02-20 22:13:34.117445"], ["updated_at", "2022-02-20 22:13:34.117445"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7829630bc438fd134454fb022159afe5be0babc3"], ["created_at", "2022-02-20 22:13:34.133437"], ["updated_at", "2022-02-20 22:13:34.133437"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7829630bc438fd134454fb022159afe5be0babc3"], ["created_at", "2022-02-20 22:13:34.133411"], ["updated_at", "2022-02-20 22:13:34.133411"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7829630bc438fd134454fb022159afe5be0babc3"], ["created_at", "2022-02-20 22:13:34.133734"], ["updated_at", "2022-02-20 22:13:34.133734"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7829630bc438fd134454fb022159afe5be0babc3"], ["created_at", "2022-02-20 22:13:34.133992"], ["updated_at", "2022-02-20 22:13:34.133992"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.171501', '2022-02-20 22:13:34.171501');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.171501', '2022-02-20 22:13:34.171501');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.173417', '2022-02-20 22:13:34.173417');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.173417', '2022-02-20 22:13:34.173417');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.174371', '2022-02-20 22:13:34.174371');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.174371', '2022-02-20 22:13:34.174371');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.176655', '2022-02-20 22:13:34.176655');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.176655', '2022-02-20 22:13:34.176655')[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.171643', '2022-02-20 22:13:34.171643');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.171643', '2022-02-20 22:13:34.171643');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.173524', '2022-02-20 22:13:34.173524');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.173524', '2022-02-20 22:13:34.173524');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.174490', '2022-02-20 22:13:34.174490');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.174490', '2022-02-20 22:13:34.174490');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.176764', '2022-02-20 22:13:34.176764');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.176764', '2022-02-20 22:13:34.176764')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.177651', '2022-02-20 22:13:34.177651');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.177651', '2022-02-20 22:13:34.177651');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.180279', '2022-02-20 22:13:34.180279');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.180279', '2022-02-20 22:13:34.180279');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.181232', '2022-02-20 22:13:34.181232');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.181232', '2022-02-20 22:13:34.181232');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.183315', '2022-02-20 22:13:34.183315');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.183315', '2022-02-20 22:13:34.183315')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.177651', '2022-02-20 22:13:34.177651');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.177651', '2022-02-20 22:13:34.177651');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.180459', '2022-02-20 22:13:34.180459');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.180459', '2022-02-20 22:13:34.180459');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.181941', '2022-02-20 22:13:34.181941');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.181941', '2022-02-20 22:13:34.181941');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.184882', '2022-02-20 22:13:34.184882');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.184882', '2022-02-20 22:13:34.184882')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.220852', '2022-02-20 22:13:34.220852');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.220852', '2022-02-20 22:13:34.220852');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.220916', '2022-02-20 22:13:34.220916');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.220916', '2022-02-20 22:13:34.220916');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.220945', '2022-02-20 22:13:34.220945');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.220945', '2022-02-20 22:13:34.220945');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.220971', '2022-02-20 22:13:34.220971');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.220971', '2022-02-20 22:13:34.220971')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.221158', '2022-02-20 22:13:34.221158');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.221158', '2022-02-20 22:13:34.221158');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.221221', '2022-02-20 22:13:34.221221');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.221221', '2022-02-20 22:13:34.221221');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.221249', '2022-02-20 22:13:34.221249');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.221249', '2022-02-20 22:13:34.221249');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.221275', '2022-02-20 22:13:34.221275');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.221275', '2022-02-20 22:13:34.221275')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.225991', '2022-02-20 22:13:34.225991');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.225991', '2022-02-20 22:13:34.225991');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.226055', '2022-02-20 22:13:34.226055');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.226055', '2022-02-20 22:13:34.226055');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.226090', '2022-02-20 22:13:34.226090');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.226090', '2022-02-20 22:13:34.226090');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.226120', '2022-02-20 22:13:34.226120');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.226120', '2022-02-20 22:13:34.226120')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.231430', '2022-02-20 22:13:34.231430');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.231430', '2022-02-20 22:13:34.231430');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.231491', '2022-02-20 22:13:34.231491');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.231491', '2022-02-20 22:13:34.231491');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.231519', '2022-02-20 22:13:34.231519');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.231519', '2022-02-20 22:13:34.231519');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.231544', '2022-02-20 22:13:34.231544');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.231544', '2022-02-20 22:13:34.231544')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.231925', '2022-02-20 22:13:34.231925');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.231925', '2022-02-20 22:13:34.231925');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.232023', '2022-02-20 22:13:34.232023');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.232023', '2022-02-20 22:13:34.232023');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.232057', '2022-02-20 22:13:34.232057');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.232057', '2022-02-20 22:13:34.232057');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.232083', '2022-02-20 22:13:34.232083');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.232083', '2022-02-20 22:13:34.232083')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.234821', '2022-02-20 22:13:34.234821');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.234821', '2022-02-20 22:13:34.234821');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.234904', '2022-02-20 22:13:34.234904');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.234904', '2022-02-20 22:13:34.234904');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.234937', '2022-02-20 22:13:34.234937');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.234937', '2022-02-20 22:13:34.234937');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.234974', '2022-02-20 22:13:34.234974');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.234974', '2022-02-20 22:13:34.234974')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.236389', '2022-02-20 22:13:34.236389');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.236389', '2022-02-20 22:13:34.236389');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.236479', '2022-02-20 22:13:34.236479');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.236479', '2022-02-20 22:13:34.236479');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.236518', '2022-02-20 22:13:34.236518');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.236518', '2022-02-20 22:13:34.236518');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.236547', '2022-02-20 22:13:34.236547');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.236547', '2022-02-20 22:13:34.236547')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.241283', '2022-02-20 22:13:34.241283');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.241283', '2022-02-20 22:13:34.241283');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.241357', '2022-02-20 22:13:34.241357');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.241357', '2022-02-20 22:13:34.241357');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.241389', '2022-02-20 22:13:34.241389');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.241389', '2022-02-20 22:13:34.241389');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.241415', '2022-02-20 22:13:34.241415');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.241415', '2022-02-20 22:13:34.241415')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.244939', '2022-02-20 22:13:34.244939');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.244939', '2022-02-20 22:13:34.244939');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.245027', '2022-02-20 22:13:34.245027');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.245027', '2022-02-20 22:13:34.245027');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.245076', '2022-02-20 22:13:34.245076');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.245076', '2022-02-20 22:13:34.245076');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.245121', '2022-02-20 22:13:34.245121');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.245121', '2022-02-20 22:13:34.245121')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mFixtures Load (7.1ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.238398', '2022-02-20 22:13:34.238398');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.238398', '2022-02-20 22:13:34.238398');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.238548', '2022-02-20 22:13:34.238548');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.238548', '2022-02-20 22:13:34.238548');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.238613', '2022-02-20 22:13:34.238613');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.238613', '2022-02-20 22:13:34.238613');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.238666', '2022-02-20 22:13:34.238666');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.238666', '2022-02-20 22:13:34.238666')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.243517', '2022-02-20 22:13:34.243517');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:13:34.243517', '2022-02-20 22:13:34.243517');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.243631', '2022-02-20 22:13:34.243631');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.243631', '2022-02-20 22:13:34.243631');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:13:34.243684', '2022-02-20 22:13:34.243684');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:13:34.243684', '2022-02-20 22:13:34.243684');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:13:34.243733', '2022-02-20 22:13:34.243733');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:13:34.243733', '2022-02-20 22:13:34.243733')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (26.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (29.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[36mTruncate Tables (30.7ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (31.2ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.288947', '2022-02-20 22:16:46.288947');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.288947', '2022-02-20 22:16:46.288947');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.292803', '2022-02-20 22:16:46.292803');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.292803', '2022-02-20 22:16:46.292803');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.294845', '2022-02-20 22:16:46.294845');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.294845', '2022-02-20 22:16:46.294845');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.296244', '2022-02-20 22:16:46.296244');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.296244', '2022-02-20 22:16:46.296244')[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.288950', '2022-02-20 22:16:46.288950');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.288950', '2022-02-20 22:16:46.288950');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.293393', '2022-02-20 22:16:46.293393');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.293393', '2022-02-20 22:16:46.293393');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.294906', '2022-02-20 22:16:46.294906');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.294906', '2022-02-20 22:16:46.294906');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.296362', '2022-02-20 22:16:46.296362');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.296362', '2022-02-20 22:16:46.296362')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.292818', '2022-02-20 22:16:46.292818');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.292818', '2022-02-20 22:16:46.292818');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.295802', '2022-02-20 22:16:46.295802');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.295802', '2022-02-20 22:16:46.295802');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.297669', '2022-02-20 22:16:46.297669');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.297669', '2022-02-20 22:16:46.297669');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.298782', '2022-02-20 22:16:46.298782');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.298782', '2022-02-20 22:16:46.298782')[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.292659', '2022-02-20 22:16:46.292659');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.292659', '2022-02-20 22:16:46.292659');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.296339', '2022-02-20 22:16:46.296339');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.296339', '2022-02-20 22:16:46.296339');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.297606', '2022-02-20 22:16:46.297606');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.297606', '2022-02-20 22:16:46.297606');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.298704', '2022-02-20 22:16:46.298704');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.298704', '2022-02-20 22:16:46.298704')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.371206', '2022-02-20 22:16:46.371206');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.371206', '2022-02-20 22:16:46.371206');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.371258', '2022-02-20 22:16:46.371258');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.371258', '2022-02-20 22:16:46.371258');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.371285', '2022-02-20 22:16:46.371285');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.371285', '2022-02-20 22:16:46.371285');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.371308', '2022-02-20 22:16:46.371308');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.371308', '2022-02-20 22:16:46.371308')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.371568', '2022-02-20 22:16:46.371568');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.371568', '2022-02-20 22:16:46.371568');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.371615', '2022-02-20 22:16:46.371615');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.371615', '2022-02-20 22:16:46.371615');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.371640', '2022-02-20 22:16:46.371640');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.371640', '2022-02-20 22:16:46.371640');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.371908', '2022-02-20 22:16:46.371908');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.371908', '2022-02-20 22:16:46.371908')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.372290', '2022-02-20 22:16:46.372290');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.372290', '2022-02-20 22:16:46.372290');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.372338', '2022-02-20 22:16:46.372338');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.372338', '2022-02-20 22:16:46.372338');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.372363', '2022-02-20 22:16:46.372363');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.372363', '2022-02-20 22:16:46.372363');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.372382', '2022-02-20 22:16:46.372382');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.372382', '2022-02-20 22:16:46.372382')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.381317', '2022-02-20 22:16:46.381317');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.381317', '2022-02-20 22:16:46.381317');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.381369', '2022-02-20 22:16:46.381369');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.381369', '2022-02-20 22:16:46.381369');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.381397', '2022-02-20 22:16:46.381397');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.381397', '2022-02-20 22:16:46.381397');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.381420', '2022-02-20 22:16:46.381420');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.381420', '2022-02-20 22:16:46.381420')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.385230', '2022-02-20 22:16:46.385230');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.385230', '2022-02-20 22:16:46.385230');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.385324', '2022-02-20 22:16:46.385324');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.385324', '2022-02-20 22:16:46.385324');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.385373', '2022-02-20 22:16:46.385373');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.385373', '2022-02-20 22:16:46.385373');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.385412', '2022-02-20 22:16:46.385412');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.385412', '2022-02-20 22:16:46.385412')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.385785', '2022-02-20 22:16:46.385785');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.385785', '2022-02-20 22:16:46.385785');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.385866', '2022-02-20 22:16:46.385866');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.385866', '2022-02-20 22:16:46.385866');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.385909', '2022-02-20 22:16:46.385909');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.385909', '2022-02-20 22:16:46.385909');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.385974', '2022-02-20 22:16:46.385974');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.385974', '2022-02-20 22:16:46.385974')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.386026', '2022-02-20 22:16:46.386026');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.386026', '2022-02-20 22:16:46.386026');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.386091', '2022-02-20 22:16:46.386091');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.386091', '2022-02-20 22:16:46.386091');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.386136', '2022-02-20 22:16:46.386136');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.386136', '2022-02-20 22:16:46.386136');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.386163', '2022-02-20 22:16:46.386163');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.386163', '2022-02-20 22:16:46.386163')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.388821', '2022-02-20 22:16:46.388821');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.388821', '2022-02-20 22:16:46.388821');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.388974', '2022-02-20 22:16:46.388974');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.388974', '2022-02-20 22:16:46.388974');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.389044', '2022-02-20 22:16:46.389044');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.389044', '2022-02-20 22:16:46.389044');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.389097', '2022-02-20 22:16:46.389097');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.389097', '2022-02-20 22:16:46.389097')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.393835', '2022-02-20 22:16:46.393835');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.393835', '2022-02-20 22:16:46.393835');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.393917', '2022-02-20 22:16:46.393917');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.393917', '2022-02-20 22:16:46.393917');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.393956', '2022-02-20 22:16:46.393956');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.393956', '2022-02-20 22:16:46.393956');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.393982', '2022-02-20 22:16:46.393982');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.393982', '2022-02-20 22:16:46.393982')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.394658', '2022-02-20 22:16:46.394658');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.394658', '2022-02-20 22:16:46.394658');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.394726', '2022-02-20 22:16:46.394726');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.394726', '2022-02-20 22:16:46.394726');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.394756', '2022-02-20 22:16:46.394756');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.394756', '2022-02-20 22:16:46.394756');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.394782', '2022-02-20 22:16:46.394782');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.394782', '2022-02-20 22:16:46.394782')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.394265', '2022-02-20 22:16:46.394265');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:16:46.394265', '2022-02-20 22:16:46.394265');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.394352', '2022-02-20 22:16:46.394352');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.394352', '2022-02-20 22:16:46.394352');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:16:46.394384', '2022-02-20 22:16:46.394384');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:16:46.394384', '2022-02-20 22:16:46.394384');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:16:46.394410', '2022-02-20 22:16:46.394410');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:16:46.394410', '2022-02-20 22:16:46.394410')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (26.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (27.9ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (30.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (32.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.657509', '2022-02-20 22:17:33.657509');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.657509', '2022-02-20 22:17:33.657509');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.660320', '2022-02-20 22:17:33.660320');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.660320', '2022-02-20 22:17:33.660320');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.661534', '2022-02-20 22:17:33.661534');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.661534', '2022-02-20 22:17:33.661534');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.663455', '2022-02-20 22:17:33.663455');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.663455', '2022-02-20 22:17:33.663455')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.659522', '2022-02-20 22:17:33.659522');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.659522', '2022-02-20 22:17:33.659522');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.661980', '2022-02-20 22:17:33.661980');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.661980', '2022-02-20 22:17:33.661980');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.662994', '2022-02-20 22:17:33.662994');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.662994', '2022-02-20 22:17:33.662994');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.664884', '2022-02-20 22:17:33.664884');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.664884', '2022-02-20 22:17:33.664884')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.661440', '2022-02-20 22:17:33.661440');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.661440', '2022-02-20 22:17:33.661440');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.664737', '2022-02-20 22:17:33.664737');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.664737', '2022-02-20 22:17:33.664737');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.666285', '2022-02-20 22:17:33.666285');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.666285', '2022-02-20 22:17:33.666285');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.668842', '2022-02-20 22:17:33.668842');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.668842', '2022-02-20 22:17:33.668842')[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.662381', '2022-02-20 22:17:33.662381');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.662381', '2022-02-20 22:17:33.662381');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.665574', '2022-02-20 22:17:33.665574');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.665574', '2022-02-20 22:17:33.665574');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.667050', '2022-02-20 22:17:33.667050');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.667050', '2022-02-20 22:17:33.667050');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.669582', '2022-02-20 22:17:33.669582');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.669582', '2022-02-20 22:17:33.669582')[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.709569', '2022-02-20 22:17:33.709569');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.709569', '2022-02-20 22:17:33.709569');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.709626', '2022-02-20 22:17:33.709626');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.709626', '2022-02-20 22:17:33.709626');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.709652', '2022-02-20 22:17:33.709652');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.709652', '2022-02-20 22:17:33.709652');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.709679', '2022-02-20 22:17:33.709679');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.709679', '2022-02-20 22:17:33.709679')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.709914', '2022-02-20 22:17:33.709914');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.709914', '2022-02-20 22:17:33.709914');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.709970', '2022-02-20 22:17:33.709970');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.709970', '2022-02-20 22:17:33.709970');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.709997', '2022-02-20 22:17:33.709997');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.709997', '2022-02-20 22:17:33.709997');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.710024', '2022-02-20 22:17:33.710024');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.710024', '2022-02-20 22:17:33.710024')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.715187', '2022-02-20 22:17:33.715187');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.715187', '2022-02-20 22:17:33.715187');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.715251', '2022-02-20 22:17:33.715251');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.715251', '2022-02-20 22:17:33.715251');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.715279', '2022-02-20 22:17:33.715279');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.715279', '2022-02-20 22:17:33.715279');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.715302', '2022-02-20 22:17:33.715302');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.715302', '2022-02-20 22:17:33.715302')[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.715173', '2022-02-20 22:17:33.715173');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.715173', '2022-02-20 22:17:33.715173');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.715238', '2022-02-20 22:17:33.715238');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.715238', '2022-02-20 22:17:33.715238');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.715266', '2022-02-20 22:17:33.715266');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.715266', '2022-02-20 22:17:33.715266');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.715289', '2022-02-20 22:17:33.715289');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.715289', '2022-02-20 22:17:33.715289')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.3ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.722204', '2022-02-20 22:17:33.722204');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.722204', '2022-02-20 22:17:33.722204');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.722323', '2022-02-20 22:17:33.722323');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.722323', '2022-02-20 22:17:33.722323');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.722377', '2022-02-20 22:17:33.722377');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.722377', '2022-02-20 22:17:33.722377');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.722413', '2022-02-20 22:17:33.722413');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.722413', '2022-02-20 22:17:33.722413')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.723290', '2022-02-20 22:17:33.723290');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.723290', '2022-02-20 22:17:33.723290');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.723351', '2022-02-20 22:17:33.723351');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.723351', '2022-02-20 22:17:33.723351');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.723384', '2022-02-20 22:17:33.723384');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.723384', '2022-02-20 22:17:33.723384');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.723409', '2022-02-20 22:17:33.723409');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.723409', '2022-02-20 22:17:33.723409')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.730336', '2022-02-20 22:17:33.730336');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.730336', '2022-02-20 22:17:33.730336');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.730429', '2022-02-20 22:17:33.730429');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.730429', '2022-02-20 22:17:33.730429');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.730466', '2022-02-20 22:17:33.730466');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.730466', '2022-02-20 22:17:33.730466');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.730497', '2022-02-20 22:17:33.730497');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.730497', '2022-02-20 22:17:33.730497')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.730609', '2022-02-20 22:17:33.730609');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.730609', '2022-02-20 22:17:33.730609');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.730704', '2022-02-20 22:17:33.730704');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.730704', '2022-02-20 22:17:33.730704');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.730738', '2022-02-20 22:17:33.730738');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.730738', '2022-02-20 22:17:33.730738');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.730769', '2022-02-20 22:17:33.730769');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.730769', '2022-02-20 22:17:33.730769')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.739148', '2022-02-20 22:17:33.739148');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.739148', '2022-02-20 22:17:33.739148');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.739298', '2022-02-20 22:17:33.739298');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.739298', '2022-02-20 22:17:33.739298');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.739362', '2022-02-20 22:17:33.739362');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.739362', '2022-02-20 22:17:33.739362');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.739418', '2022-02-20 22:17:33.739418');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.739418', '2022-02-20 22:17:33.739418')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.739148', '2022-02-20 22:17:33.739148');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.739148', '2022-02-20 22:17:33.739148');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.739298', '2022-02-20 22:17:33.739298');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.739298', '2022-02-20 22:17:33.739298');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.739359', '2022-02-20 22:17:33.739359');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.739359', '2022-02-20 22:17:33.739359');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.739427', '2022-02-20 22:17:33.739427');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.739427', '2022-02-20 22:17:33.739427')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "empresas";
+DELETE FROM "imagenes";
+DELETE FROM "roles";
+DELETE FROM "users";
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.741717', '2022-02-20 22:17:33.741717');
+INSERT INTO "empresas" ("id", "nombre_comercial", "razon_social", "telefono", "correo", "nit", "direccion", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2022-02-20 22:17:33.741717', '2022-02-20 22:17:33.741717');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.741830', '2022-02-20 22:17:33.741830');
+INSERT INTO "imagenes" ("id", "nombre", "base64", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.741830', '2022-02-20 22:17:33.741830');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', '2022-02-20 22:17:33.741888', '2022-02-20 22:17:33.741888');
+INSERT INTO "roles" ("id", "nombre", "estado", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', '2022-02-20 22:17:33.741888', '2022-02-20 22:17:33.741888');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (980190962, '2022-02-20 22:17:33.741943', '2022-02-20 22:17:33.741943');
+INSERT INTO "users" ("id", "created_at", "updated_at") VALUES (298486374, '2022-02-20 22:17:33.741943', '2022-02-20 22:17:33.741943')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m

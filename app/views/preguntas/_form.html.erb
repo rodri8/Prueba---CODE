@@ -1,0 +1,37 @@
+<%= form_with(model: pregunta) do |form| %>
+  <% if pregunta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pregunta.errors.count, "error") %> prohibited this pregunta from being saved:</h2>
+
+      <ul>
+        <% pregunta.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :evaluacion_id %>
+    <%= form.select :evaluacion_id, options_for_select(Evaluacion.all.collect { | e | [e.nombre, e.id] }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :texto %>
+    <%= form.text_field :texto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correcta %>
+    <%= form.select :correcta, ['No', 'Si'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.select :estado, ['activo', 'desactivo'] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

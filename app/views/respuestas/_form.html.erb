@@ -1,0 +1,62 @@
+<%= form_with(model: respuesta) do |form| %>
+  <% if respuesta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(respuesta.errors.count, "error") %> prohibited this respuesta from being saved:</h2>
+
+      <ul>
+        <% respuesta.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pregunta1 %>
+    <%= form.number_field :pregunta1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pregunta2 %>
+    <%= form.number_field :pregunta2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pregunta3 %>
+    <%= form.number_field :pregunta3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pregunta4 %>
+    <%= form.number_field :pregunta4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pregunta5 %>
+    <%= form.number_field :pregunta5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codigo %>
+    <%= form.text_field :codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nota %>
+    <%= form.number_field :nota %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

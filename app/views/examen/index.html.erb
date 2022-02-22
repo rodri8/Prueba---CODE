@@ -1,0 +1,74 @@
+<%# radio_button("pregunta1", "grupo", p1.texto ) %>
+
+<%= link_to 'Inicio', inicio_path %>
+
+<h1>Preguntas de examen</h1>
+
+<%= form_with url: "/api/v1/respuestas", method: :post do |form| %>
+   
+	<div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title">Nombre del alumno</h5>
+				<input type="text" name="[respuesta]nombre" value="">
+    	</div>
+  	</div>
+
+<p>&nbsp;</p>
+
+    <div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(1).nombre %></h5>
+				<% @pregunta1.each do |p1| %>
+				<input type="radio" name="[respuesta]pregunta1" value="<%= p1.id %>"> <%= p1.texto %> <br />
+				<% end %>
+    	</div>
+  	</div>
+
+		<p>&nbsp;</p>
+
+  	<div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(2).nombre %></h5>
+				<% @pregunta2.each do |p1| %>
+				<input type="radio" name="[respuesta]pregunta2" value="<%= p1.id %>"> <%= p1.texto %> <br />
+				<% end %>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+  	<div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(3).nombre %></h5>
+				<% @pregunta3.each do |p1| %>
+				<input type="radio" name="[respuesta]pregunta3" value="<%= p1.id %>"> <%= p1.texto %> <br />
+				<% end %>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+  	<div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(4).nombre %></h5>
+				<% @pregunta4.each do |p1| %>
+				<input type="radio" name="[respuesta]pregunta4" value="<%= p1.id %>"> <%= p1.texto %> <br />
+				<% end %>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+
+  	<div class="card">
+    	<div class="card-body">
+		    <h5 class="card-title"><%= Evaluacion.find(5).nombre %></h5>
+				<% @pregunta5.each do |p1| %>
+				<input type="radio" name="[respuesta]pregunta5" value="<%= p1.id %>"> <%= p1.texto %> <br />
+				<% end %>
+    	</div>
+  	</div>
+
+  	<p>&nbsp;</p>
+	
+  <%= form.submit "Enviar Respuetas" %>
+<% end %>

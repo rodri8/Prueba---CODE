@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @respuesta.nombre %>
+</p>
+
+<p>
+  <strong>Pregunta1:</strong>
+  <%= @respuesta.pregunta1 %>
+</p>
+
+<p>
+  <strong>Pregunta2:</strong>
+  <%= @respuesta.pregunta2 %>
+</p>
+
+<p>
+  <strong>Pregunta3:</strong>
+  <%= @respuesta.pregunta3 %>
+</p>
+
+<p>
+  <strong>Pregunta4:</strong>
+  <%= @respuesta.pregunta4 %>
+</p>
+
+<p>
+  <strong>Pregunta5:</strong>
+  <%= @respuesta.pregunta5 %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @respuesta.codigo %>
+</p>
+
+<p>
+  <strong>Nota:</strong>
+  <%= @respuesta.nota %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @respuesta.estado %>
+</p>
+
+<%= link_to 'Edit', edit_respuesta_path(@respuesta) %> |
+<%= link_to 'Back', respuestas_path %>

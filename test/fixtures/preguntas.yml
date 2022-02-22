@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: preguntas
+#
+#  id            :integer          not null, primary key
+#  evaluacion_id :integer          not null
+#  texto         :string
+#  correcta      :string
+#  estado        :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+one:
+  evaluacion: one
+  texto: MyString
+  correcta: MyString
+  estado: MyString
+
+two:
+  evaluacion: two
+  texto: MyString
+  correcta: MyString
+  estado: MyString
